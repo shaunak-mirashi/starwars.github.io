@@ -1,0 +1,438 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --gutter: 30px;
+    --side-small: 26;
+    --side-big: 36;
+    --depth: 4000px;
+    --transition: .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+@font-face {
+    font-family: 'raleway_c';
+    src: url('../fonts/raleway-v22-cyrillic-300.woff2');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Starjedi';
+    src: local('Starjedi'), url('fonts/star-jedi.ttf') format('ttf');
+}
+
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: calc(var(--index) * .8);
+    font-family: 'raleway_c', sans-serif;
+    line-height: 1.75;
+    height: var(--depth);
+    font-weight: 300;
+}
+
+body.charac {
+    background-color: #000;
+    
+    font-size: calc(var(--index) * .8);
+    font-family: 'raleway_c', sans-serif;
+    line-height: 1.75;
+    height: auto;
+    font-weight: 300;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    perspective: 1200px;
+}
+
+.gallery {
+    transform-style: preserve-3d;
+    height: 100%;
+}
+
+.frame {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition), opacity .25s;
+    will-change: transform;
+    transform-style: preserve-3d;
+    
+}
+
+
+
+
+h1, h2, h3, h4 {
+
+    font-family: 'Star Jedi', sans-serif; /* Fallback to sans-serif if 'Star Jedi' isn't available */
+    color: #FFD700; /* Star Wars yellow, hexadecimal color */
+    font-size: 24px; /* Adjust size as needed */
+    transition: color 0.3s ease-in-out;
+    font-weight: 100;
+    
+    
+    line-height: 1;
+}
+
+.frame-media {
+    position: relative;
+    width: calc(var(--index) * var(--side-small));
+    height: calc(var(--index) * var(--side-big));
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.frame-media-s1 {
+    width: 100%; /* Use full width of the container */
+    height: 100%; /* Use full height of the container */
+    display: flex; /* Enables flexbox properties */
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    background-image: url('images/S1.png'); /* Ensure this matches your image path */
+    background-position: center; /* Centers the background image */
+    background-size: contain; /* Ensures the entire image is visible */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    transform: scale(3);
+}
+
+
+.frame-media_left {
+    right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.frame-media_right {
+    left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.frame_bg {
+    background-color: rgba(0, 0, 0, 0.87);
+}
+
+video.frame-media {
+    width: calc(var(--index) * var(--side-big));
+    height: calc(var(--index) * var(--side-small));
+}
+
+video.frame-media_right {
+    left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+    
+}
+
+video.frame-media_left {
+    right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+    
+}
+
+.text-right > * {
+    position: relative;
+    left: 18vw;
+}
+
+.text-left > * {
+    position: relative;
+    right: 18vw;
+}
+
+.frame h3 {
+    font-size: calc(var(--index) * 3);
+    
+}
+
+.frame p {
+    max-width: 32vw;
+    margin-top: 10px;
+    
+    
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.soundbutton {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+    cursor: pointer;
+    width: 24px;
+    transition: .25s ease;
+}
+
+.soundbutton.paused {
+    opacity: .25;
+}
+
+ /* canvas#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures it's behind everything else 
+}  */
+
+
+
+.scroll-text {
+    position: center;
+    font-weight: bold;
+    bottom: 10%; /* Adjust this value as needed to position the text */
+    width: 100%;
+    text-align: center;
+    color: transparent; /* Make the text color transparent */
+    font-size: 32px; /* Text size */
+    font-family: 'raleway_c', sans-serif; /* Font family */
+    opacity: 1; /* Text opacity for better visibility */
+    transition: opacity 0.3s;
+
+    /* Apply gradient background to text */
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.75) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%; /* Cover the entire text width */
+    background-clip: text; /* Apply the background only to the text */
+    -webkit-background-clip: text; /* Ensure it works on WebKit browsers */
+    -webkit-text-fill-color: transparent; /* Specific to WebKit: makes the text itself transparent */
+
+    animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+    from {
+        background-position: -200% center;
+    }
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+.star-wars-intro {
+    font-family: 'raleway_c', sans-serif; /* Using the defined font family */
+    color: yellow; /* Classic Star Wars yellow for text */
+    font-size: 48px; /* Size of the text */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center the text horizontally */
+    line-height: normal;
+    position: absolute; /* Absolute positioning to place it over the frame */
+    top: 50%; /* Align center from top */
+    left: 50%; /* Align center from left */
+    transform: translate(-50%, -50%) perspective(1000px) rotateX(45deg) rotateY(0deg) skewY(0deg);  /* Adjust rotation and skew */
+    transform-origin: center; /* Ensures transformations pivot around the center */
+    width: 100%; /* Full width to ensure text is within the container */
+    overflow: hidden; /* Hide anything outside the container */
+}
+
+.price-tag {
+    font-size: 28px; /* Larger font size for price tag */
+    font-weight: bold; /* Bold font weight for emphasis */
+    margin-top: 80px; /* Space above the price tag */
+    color: #FFD700;
+}
+
+
+.add-to-cart-btn {
+    display: inline-block; /* Makes the button inline-block for better control */
+    background-color: #000; /* Initial background color is black */
+    color: #fff; /* Initial text color is white */
+    border: 2px solid #fff; /* White border for the button */
+    padding: 10px 20px; /* Padding inside the button */
+    margin-top: 10px; /* Space above the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 24px; /* Font size for the button text */
+    transition: background-color 0.3s, color 0.3s, border 0.3s; /* Smooth transition for hover effects */
+    text-transform: uppercase; /* Makes the text uppercase for aesthetics */
+    font-weight: bold; /* Bold text for better visibility */
+}
+
+.add-to-cart-btn:hover {
+    background-color: #fff; /* Background turns white on hover */
+    color: #000; /* Text color turns black on hover */
+    border-color: #000; /* Border color turns black on hover */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding: 30px 00px; /* Increased padding from the top and more padding on the left */
+    box-sizing: border-box;
+    z-index: 1000;  /* Ensures the header stays on top */
+    
+}
+
+.header1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    padding: 30px 00px; /* Increased padding from the top and more padding on the left */
+    box-sizing: border-box;
+    z-index: 10;  /* Ensures the header stays on top */
+    background-color: rgba(0, 0, 0, 0.9);
+    
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */ /* Aligns links to the left */
+    padding-left: 50px; /* Additional padding from the left edge of the screen */
+    justify-content: center;
+}
+
+.nav-link {
+    color: #fff; /* Unselected state color (white) */
+    text-decoration: none;
+    margin-right: 20px; /* Space between links */
+    font-size: 18px; /* Adjust the size as needed */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    padding: 10px 15px; /* Padding around the text to increase hit area and aesthetics */
+}
+
+.nav-link:hover {
+    opacity: 0.75; /* Less opacity on hover */
+}
+
+.nav-link.active {
+    color: #FFD700; /* Selected state color (Star Wars yellow) */
+    font-size: 20px;
+    font-weight: bold;
+}
+.character-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 10px auto 0 auto; 
+    justify-content: center;
+    align-items: center;
+}
+
+.character-card {
+    background-color: rgb(29, 29, 29);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    color: white;
+    position: relative;
+}
+
+.character-card:hover {
+    transform: scale(1.05);
+    background-color: rgb(51, 51, 51);
+}
+
+.character-name {
+    
+    
+     /* Makes the character name bold */
+    font-family: 'Star Jedi', sans-serif;
+
+    color: #FFD700; /* Ensures the text is white for visibility */
+    font-size: 20px; /* Optionally adjust the font size for better visibility */
+    letter-spacing: 2px;
+    
+    
+    ;
+}
+
+.character-image {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.character-details {
+    padding: 20px;
+    font-size: medium;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.top-cards-title1 {
+    font-size: 48px;
+    color: #FFD700;
+    font-weight: bold;
+    margin: 200px auto 0  100px;
+    text-align: left;
+    letter-spacing: 2px;
+}
+
+.top-cards-title {
+    font-size: 48px;
+    color: #FFD700;
+    font-weight: bold;
+    margin: 200px auto 0 auto;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.starship-animation {
+    width: 100%;
+    height: 500px;  /* Adjust based on your image size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+
+
+------------------------------------
+
+
+#page{
+    position: relative;
+    height: 50vh;
+    width: 50vw;
+    /* background-color: #f1f1f1; */
+  }
+  #page1{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    /* background-color: #f1f1f1; */
+  }
+  #page2{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    /* background-color: #f1f1f1; */
+  }
+  #page3{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    /* background-color: #f1f1f1; */
+  }
+  canvas{
+    position: relative;
+    z-index: 9;
+    max-width: 100vw;
+    max-height: 100vh;
+  }

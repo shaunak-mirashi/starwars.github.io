@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/characters.css">
+    <script src="js/app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <div id="particles-js" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+    <div class="header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="characters.html" class="nav-link">Characters</a>
+            <a href="films.html" class="nav-link">Starships</a>
+            <!-- <a href="films.html" class="nav-link">Films</a> -->
+        </nav>
+    </div>
+
+    <div class="container">
+        
+        <section class="gallery">
+            <div class="frame">
+                <div class="frame__content">
+                    <h2> </h2>
+                </div>
+            </div>
+            <div class="frame">
+                <div class="frame__content">
+                    <div class="frame-media " style="background-image: url(images/S1.png); transform: scale(2);"></div>
+                    <div class="scroll-text">Scroll to Begin</div>
+                </div>
+            </div>
+            <div class="frame">
+                <div class="frame__content">
+                    <div class="frame-media " style="background-image: url(images/S2.png); transform: scale(2);"></div>
+                </div>
+            </div>
+            <div class="frame">
+                <div class="frame__content">
+                    <div class="star-wars-intro"  >
+                        
+                            A long time ago in a <br>galaxy far, far away....
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="frame">
+                <div class="frame__content">
+                    
+                    <div class="frame-media " style="background-image: url(images/S5.png); transform: scale(2); "></div>
+                    
+                    
+                </div>
+            </div>
+            
+             <!-- <div class="frame frame_bg">  
+                <div class="frame__content">
+                   <video class="frame-media frame-media_right" src="media/video_optimized.mp4" autoplay loop muted></video>
+                </div>
+            </div>  --> 
+            <div class="frame"></div>
+            <div class="frame">
+                <div class="frame__content text-right">
+                    <h3>Darth vader</h3>
+                    <p>A high-ranking Jedi Knight who fought for the Galactic Republic and also "the Chosen One", the prophesied individual who would destroy the Sith and bring balance to the Force. </p>
+                    <div class="price-tag">$99</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="frame frame_bg">    
+                <div class="frame__content">
+                    <div class="frame-media frame-media_left" style="background-image: url(images/T1.png); margin-right: 50px; " ></div>
+                </div>
+            </div>
+            <div class="frame"></div>
+            <div class="frame">
+                <div class="frame__content text-right">
+                    <h3>yoda</h3>
+                    <p>This Jedi Grand Master has lived for centuries, training young padawans and leading the Jedi Order. His background is a mystery and he's seen the rise and fall of the Galactic Republic. </p>
+                    <div class="price-tag">$15</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="frame frame_bg">    
+                <div class="frame__content">
+                    <div class="frame-media frame-media_left" style="background-image: url(images/T2.png); margin-right: 50px; transform: scale(1.1);" ></div>
+                </div>
+            </div>
+            <div class="frame"></div>
+            <div class="frame">
+                <div class="frame__content text-right">
+                    <h3>Luke <br>skywalker</h3>
+                    <p>Celebrate the most stellar fandom of all with Pop! Luke Skywalker™. This farm boy is ready to learn the ways of the Jedi™ and embark on a mission far from home.  </p>
+                    <div class="price-tag">$12</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="frame frame_bg">    
+                <div class="frame__content">
+                    <div class="frame-media frame-media_left" style="background-image: url(images/T3.png); margin-right: -20px; transform: scale(1.1);" ></div>
+                </div>
+            </div>
+
+            <div class="frame"></div>
+            <div class="frame">
+                <div class="frame__content text-right">
+                    <h3>bb-8</h3>
+                    <p>Meet BB-8, the loyal and adventurous astromech droid from Star Wars! This Funko Pop captures BB-8's unique spherical design and spirited personality.  </p>
+                    <div class="price-tag">$12</div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            <div class="frame frame_bg">    
+                <div class="frame__content">
+                    <div class="frame-media frame-media_left" style="background-image: url(images/T4.png); margin-right: -20px; " ></div>
+                </div>
+            </div>
+
+            
+            <div class="frame"></div>
+            <div class="frame frame_bg">
+                <div class="frame__content">
+                    <video class="frame-media" src="media/video_optimized.mp4" autoplay loop muted></video>
+                </div>
+            </div>
+            
+            
+            <div class="frame"></div>
+            <div class="frame">
+                <div class="frame__content">© 2023 frontend-dev.com</div>
+            </div>
+        </section>
+    </div>
+    <img src="images/sound.gif" alt="Alt" class="soundbutton">
+    <audio src="media/SW1.mp3" class="audio" loop></audio>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+    
+      
+</body>
+</html>
